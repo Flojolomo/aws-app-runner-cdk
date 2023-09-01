@@ -21,12 +21,5 @@ export class AwsAppRunnerCdkStack extends cdk.Stack {
     new cdk.CfnOutput(this, "app-runner-service-url", {
       value: appRunnerService.serviceUrl
     })
-
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'AwsAppRunnerCdkQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
   }
 }
