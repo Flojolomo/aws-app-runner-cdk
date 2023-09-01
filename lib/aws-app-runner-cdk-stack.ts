@@ -7,11 +7,11 @@ export class AwsAppRunnerCdkStack extends cdk.Stack {
     super(scope, id, props);
 
     const appRunnerService = new apprunner.Service(this, "app-runner-service", {
-      source: apprunner.Source.fromGitHub({
-        repositoryUrl: "https://github.com/vercel/next.js/tree/canary/examples/hello-world",
-        branch: "canary",
-        configurationSource: apprunner.ConfigurationSourceType.REPOSITORY,
-        connection: apprunner.GitHubConnection.fromConnectionArn("arn:aws:apprunner:eu-central-1:718517280342:connection/private-github/bb8596b912844bad8ebd7cb0f99143ac")
+      source: apprunner.Source.fromEcrPublic({
+        imageIdentifier: "public.ecr.aws/aws-containers/hello-app-runner:latest",
+        imageConfiguration: {
+            port: 8000
+        },
       })
     })
 
