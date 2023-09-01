@@ -8,6 +8,7 @@ export class AwsAppRunnerCdkStack extends cdk.Stack {
     super(scope, id, props);
 
     const appRunnerService = new apprunner.Service(this, "app-runner-service", {
+      serviceName: "AppRunnerExampleService",
       source: apprunner.Source.fromEcr({
         repository: ecr.Repository.fromRepositoryName(this, "image-repository", "manual-test"),
         tagOrDigest: "latest",
