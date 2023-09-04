@@ -1,14 +1,12 @@
-# Welcome to your CDK TypeScript project
+# Example AppRunner application
 
-This is a blank project for CDK development with TypeScript.
+The intention of this project is to host app runner with different source options, covering private ECR, public ECR & GitHub repositories.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+The AWS account launching this application is preconfigured with an ECR repository called `manual-test`. Make sure to change the repository name accordingly.
+To publish a new image to that repository, follow the instructions
+Docker image pulled, retagged and pushed to private repository [here](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html) or alternatively given in the console of the repository.
 
-## Useful commands
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+## Links
+* [CDK package for apprunner](https://constructs.dev/packages/@aws-cdk/aws-apprunner-alpha/v/2.93.0-alpha.0?lang=typescript#ecr-public)
+* [Guide to push images to ECR repository](https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-push-ecr-image.html)
